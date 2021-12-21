@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SentMessageCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_sent_message_corners</item>
+    </style>
+
+    <style name="ReceivedMessageCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_received_message_corners</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_sent_message_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/message_corner_radius</item>
+        <item name="cornerSizeTopLeft">@dimen/message_corner_radius</item>
+        <item name="cornerSizeBottomRight">@dimen/message_corner_min_radius</item>
+        <item name="cornerSizeBottomLeft">@dimen/message_corner_radius</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_received_message_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/message_corner_radius</item>
+        <item name="cornerSizeTopLeft">@dimen/message_corner_radius</item>
+        <item name="cornerSizeBottomRight">@dimen/message_corner_radius</item>
+        <item name="cornerSizeBottomLeft">@dimen/message_corner_min_radius</item>
+    </style>
+</resources>

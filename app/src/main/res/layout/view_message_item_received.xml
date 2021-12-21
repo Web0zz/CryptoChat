@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/received_message_materialCardView"
+        style="@style/ReceivedMessageCardViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/sent_message_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/message_text_padding"
+            android:textColor="?attr/colorOnSurface"
+            tools:text="Hi, Lucy! How's your day going?" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/received_message_date_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/message_date_text_size"
+        android:padding="@dimen/message_date_padding"
+        app:layout_constraintStart_toStartOf="@+id/received_message_materialCardView"
+        app:layout_constraintTop_toBottomOf="@+id/received_message_materialCardView"
+        tools:text="YESTERDAY, 12:01 PM"
+        tools:visibility="visible"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
