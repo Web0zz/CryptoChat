@@ -1,17 +1,21 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
-    compileSdk 31
+    compileSdk ConfigData.compileSdkVersion
 
     defaultConfig {
         applicationId "com.web0zz.cryptochat"
-        minSdk 21
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        minSdk ConfigData.minSdkVersion
+        targetSdk ConfigData.targetSdkVersion
+        versionCode ConfigData.versionCode
+        versionName ConfigData.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,11 +33,29 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    // Android
+    implementation AndroidDependencies.coreLib
+    implementation AndroidDependencies.appcompatLib
+    implementation AndroidDependencies.coroutinesLib
+    implementation AndroidDependencies.lifecycleKtxLib
+
+    // Android - UI
+    implementation AndroidDependencies.materialLib
+    implementation AndroidDependencies.constraintLib
+    implementation AndroidDependencies.navFragmentLib
+    implementation AndroidDependencies.navUiLib
+
+    // Room
+    implementation RoomDependencies.roomRuntimeLib
+    kapt RoomDependencies.roomCompilerLib
+
+    // Hilt
+    implementation HiltDependencies.hiltAndroidLib
+    kapt HiltDependencies.hiltCompilerLib
 }
