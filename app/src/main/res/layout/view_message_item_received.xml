@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layoutDescription="@xml/view_message_item_received_scene">
+<layout>
+    <data>
+        <variable
+            name="message"
+            type="com.web0zz.cryptochat.domain.model.Message" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/received_message_materialCardView"
-        style="@style/ReceivedMessageCardViewStyle"
-        android:layout_width="wrap_content"
+    </data>
+    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layoutDescription="@xml/view_message_item_received_scene">
 
-        <TextView
-            android:id="@+id/sent_message_textView"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/received_message_materialCardView"
+            style="@style/ReceivedMessageCardViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/message_text_padding"
+            android:backgroundTint="?attr/colorSurface"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/sent_message_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/message_text_padding"
+                android:text="@{message.body}"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Hi, Lucy! How's your day going?" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/received_message_date_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/message_date_padding"
+            android:text="@{message.sendTime}"
             android:textColor="?attr/colorOnSurface"
-            tools:text="Hi, Lucy! How's your day going?" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/received_message_date_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/message_date_padding"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="@dimen/message_date_text_size"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/received_message_materialCardView"
-        app:layout_constraintTop_toBottomOf="@+id/received_message_materialCardView"
-        tools:text="YESTERDAY, 12:01 PM"/>
-</androidx.constraintlayout.motion.widget.MotionLayout>
+            android:textSize="@dimen/message_date_text_size"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/received_message_materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/received_message_materialCardView"
+            tools:text="YESTERDAY, 12:01 PM"/>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>
