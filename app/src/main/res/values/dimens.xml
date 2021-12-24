@@ -22,6 +22,12 @@
     <!-- Chat - Message Screen -->
     <dimen name="message_corner_radius">20dp</dimen>
     <dimen name="message_corner_min_radius">3dp</dimen>
+    <dimen name="message_text_input_padding">8dp</dimen>
+    <dimen name="message_background_bottom_radius">25dp</dimen>
+    <dimen name="message_background_top_radius">0dp</dimen>
+    <dimen name="message_background_margin">5dp</dimen>
+    <dimen name="message_send_button_margin">10dp</dimen>
+    <dimen name="message_camera_button_margin_left">20dp</dimen>
 
     <!-- Text Size-->
     <dimen name="message_text_padding">10dp</dimen>

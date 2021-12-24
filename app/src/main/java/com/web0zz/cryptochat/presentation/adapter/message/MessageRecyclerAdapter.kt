@@ -4,10 +4,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.cryptochat.presentation.adapter.message.viewholder.message.ReceivedMessageViewHolder
 import com.web0zz.cryptochat.presentation.adapter.message.viewholder.message.SentMessageViewHolder
-import com.web0zz.cryptochat.presentation.model.view.message.MessageItem
-import com.web0zz.cryptochat.presentation.model.view.message.MessageItem.Type.*
-import com.web0zz.cryptochat.presentation.model.view.message.ReceivedMessage
-import com.web0zz.cryptochat.presentation.model.view.message.SentMessage
+import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem
+import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem.Type.*
+import com.web0zz.cryptochat.presentation.adapter.message.model.ReceivedMessage
+import com.web0zz.cryptochat.presentation.adapter.message.model.SentMessage
 
 class MessageRecyclerAdapter(
     private val items: List<MessageItem>

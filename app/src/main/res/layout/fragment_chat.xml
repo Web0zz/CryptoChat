@@ -1,8 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messages_recyclerView"
+            android:layout_width="@dimen/constraint_zero_dimen"
+            android:layout_height="@dimen/constraint_zero_dimen"
+            app:layout_constraintBottom_toTopOf="@+id/message_type_textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="@dimen/message_background_margin"
+            android:background="@drawable/message_input_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/message_camera_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/message_camera_button_margin_left"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/camera"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="@+id/message_type_textInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/message_type_textInputLayout"
+            app:tint="?attr/colorPrimaryVariant" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/message_type_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/constraint_zero_dimen"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/message_background_margin"
+            android:hint="@string/type_something"
+            android:padding="@dimen/message_text_input_padding"
+            android:backgroundTint="?attr/colorSurface"
+            app:hintTextColor="?attr/colorPrimaryVariant"
+            app:boxStrokeWidth="@dimen/constraint_zero_dimen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+            app:layout_constraintStart_toEndOf="@+id/message_camera_imageView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimaryVariant"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/message_send_button_margin"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:contentDescription="@string/send_message"
+            android:src="@drawable/ic_send"
+            app:borderWidth="@dimen/constraint_zero_dimen"
+            app:layout_constraintBottom_toBottomOf="@+id/message_type_textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/message_type_textInputLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

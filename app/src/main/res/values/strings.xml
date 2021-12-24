@@ -9,4 +9,9 @@
     <string name="sign_in">SIGN IN</string>
     <string name="don_t_have_an_account_register_here">Don\'t have an account? Register Here</string>
     <string name="login_state_key">LOGIN</string>
+
+    <!-- Chat Screen -->
+    <string name="type_something">Type something…</string>
+    <string name="send_message">send message</string>
+    <string name="camera">camera</string>
 </resources>

@@ -7,7 +7,7 @@ import com.web0zz.cryptochat.presentation.adapter.chat.viewholder.chat.ChatViewH
 
 class ChatRecyclerAdapter(
     private val chatList: List<Chat>,
-    private val onClickChat: (Chat) -> Unit
+    private val onClickChat: (Int) -> Unit
 ) : RecyclerView.Adapter<ChatViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         return ChatViewHolder.create(parent, onClickChat)

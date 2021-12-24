@@ -1,4 +1,4 @@
-package com.web0zz.cryptochat.presentation.model.view.message
+package com.web0zz.cryptochat.presentation.adapter.message.model
 
 import com.web0zz.cryptochat.domain.model.Message
 

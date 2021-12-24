@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.cryptochat.databinding.ViewMessageItemReceivedBinding
-import com.web0zz.cryptochat.presentation.model.view.message.ReceivedMessage
+import com.web0zz.cryptochat.presentation.adapter.message.model.ReceivedMessage
 
 class ReceivedMessageViewHolder(
     private val binding: ViewMessageItemReceivedBinding
