@@ -5,15 +5,17 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.cryptochat.R
-import com.web0zz.cryptochat.data.ChatDataSource
 import com.web0zz.cryptochat.databinding.FragmentChatBinding
 import com.web0zz.cryptochat.domain.model.Chat
+import com.web0zz.cryptochat.domain.model.Message
 import com.web0zz.cryptochat.presentation.adapter.message.MessageRecyclerAdapter
 import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem
 import com.web0zz.cryptochat.presentation.adapter.message.model.ReceivedMessage
 import com.web0zz.cryptochat.presentation.adapter.message.model.SentMessage
 import com.web0zz.cryptochat.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(
     FragmentChatBinding::inflate
 ) {
@@ -25,13 +27,15 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(
     override val mViewModel: ChatViewModel by viewModels()
     private val safeArgs: ChatFragmentArgs by navArgs()
 
-    private lateinit var chat: Chat
+    private val chat: Chat by lazy { mViewModel.getChatById(safeArgs.chatId) }
     private val messageList: MutableList<MessageItem> = mutableListOf()
 
-    override fun onCreateInvoke() {
-        chat = ChatDataSource().chatList.first { it.id == safeArgs.chatId }
+    private lateinit var messageRecyclerAdapter: MessageRecyclerAdapter
 
+    override fun onCreateInvoke() {
         chat.messages.reversed().forEach {
+            if (!it.isRead) { it.isRead = false }
+
             if (it.fromUser) messageList.add(SentMessage(it))
             else messageList.add(ReceivedMessage(it))
         }
@@ -50,7 +54,27 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(
         with(fragmentBinding.messagesRecyclerView) {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
-            adapter = MessageRecyclerAdapter(messageList)
+            adapter = MessageRecyclerAdapter(messageList).also { messageRecyclerAdapter = it }
+        }
+
+        fragmentBinding.messageSendFloatingActionButton.setOnClickListener {
+            fragmentBinding.messageInputTextInputLayout.editText?.text?.let { messageBody ->
+                if (messageBody.isNotBlank() && messageBody.isNotEmpty()) {
+                    val sendMessage: Message
+                    mViewModel.addNewMessage(
+                        chat.id,
+                        Message(
+                            0,
+                            messageBody.toString(),
+                            "TODAY",
+                            isRead = true,
+                            fromUser = true
+                        ).also { sendMessage = it }
+                    ) {
+                        messageRecyclerAdapter.addNewMessage(SentMessage(sendMessage))
+                    }
+                }
+            }
         }
     }
 }

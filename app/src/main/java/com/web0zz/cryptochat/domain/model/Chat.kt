@@ -4,5 +4,5 @@ data class Chat(
     val id: Int,
     val imageUrl: String,
     val title: String,
-    val messages: List<Message>
+    val messages: MutableList<Message>
 )

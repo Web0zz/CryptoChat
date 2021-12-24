@@ -10,7 +10,7 @@ import com.web0zz.cryptochat.presentation.adapter.message.model.ReceivedMessage
 import com.web0zz.cryptochat.presentation.adapter.message.model.SentMessage
 
 class MessageRecyclerAdapter(
-    private val items: List<MessageItem>
+    private val items: MutableList<MessageItem>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int) = items[position].getType()
 
@@ -31,4 +31,9 @@ class MessageRecyclerAdapter(
     }
 
     override fun getItemCount() = items.size
+
+    fun addNewMessage(message: SentMessage) {
+        items.add(message)
+        notifyItemInserted(items.size - 1)
+    }
 }

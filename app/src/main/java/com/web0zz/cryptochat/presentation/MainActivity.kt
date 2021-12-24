@@ -1,17 +1,20 @@
 package com.web0zz.cryptochat.presentation
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import com.web0zz.cryptochat.R
 import com.web0zz.cryptochat.databinding.ActivityMainBinding
 import com.web0zz.cryptochat.presentation.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     /*
     *   Usage of Preferences in here may be wrong usage for MVVM
     *   Implemented just for demo it will be delete later // TODO
     */
-    val themeModePreferences by lazy {
+    val themeModePreferences: SharedPreferences by lazy {
         this.getSharedPreferences(
             "THEME_MODE_IS_LIGHT",
             Context.MODE_PRIVATE
