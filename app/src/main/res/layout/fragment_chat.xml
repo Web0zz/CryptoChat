@@ -20,9 +20,9 @@
             android:id="@+id/messages_recyclerView"
             android:layout_width="@dimen/constraint_zero_dimen"
             android:layout_height="@dimen/constraint_zero_dimen"
-            android:layout_marginTop="@dimen/message_list_top_margin"
+            android:layout_marginVertical="@dimen/message_list_vertical_margin"
             android:layout_marginHorizontal="@dimen/recyclerview_margin_horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/message_type_textInputLayout"
+            app:layout_constraintBottom_toTopOf="@+id/message_input_textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chat_top_bar"
@@ -46,13 +46,13 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/camera"
             android:src="@drawable/ic_camera"
-            app:layout_constraintBottom_toBottomOf="@+id/message_type_textInputLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/message_input_textInputLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/message_type_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/message_input_textInputLayout"
             app:tint="?attr/colorPrimaryVariant" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/message_type_textInputLayout"
+            android:id="@+id/message_input_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/constraint_zero_dimen"
             android:layout_height="wrap_content"
@@ -63,10 +63,11 @@
             app:hintTextColor="?attr/colorPrimaryVariant"
             app:boxStrokeWidth="@dimen/constraint_zero_dimen"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+            app:layout_constraintEnd_toStartOf="@+id/message_send_floatingActionButton"
             app:layout_constraintStart_toEndOf="@+id/message_camera_imageView">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message_input_textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="?attr/colorPrimaryVariant"/>
@@ -74,7 +75,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/message_send_floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/message_send_button_margin"
@@ -82,8 +83,8 @@
             android:contentDescription="@string/send_message"
             android:src="@drawable/ic_send"
             app:borderWidth="@dimen/constraint_zero_dimen"
-            app:layout_constraintBottom_toBottomOf="@+id/message_type_textInputLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/message_input_textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/message_type_textInputLayout" />
+            app:layout_constraintTop_toTopOf="@+id/message_input_textInputLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

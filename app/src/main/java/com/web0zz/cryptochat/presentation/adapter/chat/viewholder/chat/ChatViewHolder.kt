@@ -18,6 +18,7 @@ class ChatViewHolder(
         binding.root.setOnClickListener { onClickChat(chat.id) }
 
         binding.chatItemUserLastMessageTextView.text = chat.messages.last().body
+        binding.chatItemLastMessageTimeTextView.text = chat.messages.last().sendTime
 
         var unReadCount = 0
         for (item in chat.messages.reversed()) {
@@ -27,7 +28,7 @@ class ChatViewHolder(
 
         if (unReadCount > 0) {
             binding.chatItemUserLastMessageTextView.text = chat.messages.last().body
-            binding.chatItemLastMessageCountTextView.setTextColor(ContextCompat.getColor(binding.root.context, R.color.light_blue))
+            binding.chatItemUserLastMessageTextView.setTextColor(ContextCompat.getColor(binding.root.context, R.color.light_blue))
             binding.chatItemLastMessageCountTextView.text = unReadCount.toString()
             binding.chatItemLastMessageCountTextView.visibility = View.VISIBLE
         }
