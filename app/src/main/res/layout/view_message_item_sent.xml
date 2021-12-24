@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <data>
+
         <variable
             name="message"
             type="com.web0zz.cryptochat.domain.model.Message" />
@@ -9,6 +11,7 @@
     <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/sent_message_motionLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/message_margin_vertical"
@@ -47,6 +50,6 @@
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/sent_message_materialCardView"
             app:layout_constraintTop_toBottomOf="@+id/sent_message_materialCardView"
-            tools:text="YESTERDAY, 12:01 PM"/>
+            tools:text="YESTERDAY, 12:01 PM" />
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

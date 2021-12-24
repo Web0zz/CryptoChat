@@ -6,7 +6,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.cryptochat.R
-import com.web0zz.cryptochat.data.ChatDataSource
 import com.web0zz.cryptochat.databinding.FragmentHomeBinding
 import com.web0zz.cryptochat.presentation.MainActivity
 import com.web0zz.cryptochat.presentation.adapter.chat.ChatRecyclerAdapter
@@ -29,7 +28,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
     }
 
     override fun onCreateViewInvoke() {
-        fragmentBinding.homeTopBar.userImageUrl = "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
+        fragmentBinding.homeTopBar.userImageUrl =
+            "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
 
         fragmentBinding.homeTopBar.homeTopBarThemeModeImageButton.setImageResource(
             with((requireActivity() as MainActivity).themeModePreferences) {
@@ -58,7 +58,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
         }
         return isLight
     }
-    
+
     private fun initRecyclerviewItems() {
         val divider = DividerItemDecoration(context, DividerItemDecoration.VERTICAL).apply {
             ContextCompat.getDrawable(fragmentBinding.root.context, R.drawable.line_divider)

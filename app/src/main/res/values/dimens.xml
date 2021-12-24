@@ -2,7 +2,6 @@
 <resources>
     <!-- Common dimens -->
     <dimen name="constraint_zero_dimen">0dp</dimen>
-    <dimen name="default_elevation">10dp</dimen>
     <dimen name="top_bar_margin">15dp</dimen>
     <dimen name="top_bar_view_size">50dp</dimen>
     <dimen name="recyclerview_margin_horizontal">10dp</dimen>
@@ -57,11 +56,11 @@
     <dimen name="message_background_margin">5dp</dimen>
     <dimen name="message_send_button_margin">10dp</dimen>
     <dimen name="message_camera_button_margin_left">20dp</dimen>
+    <dimen name="message_text_padding">10dp</dimen>
+    <dimen name="message_date_padding">8dp</dimen>
 
     <!-- Text Size-->
     <dimen name="chat_top_bar_user_title_size">16sp</dimen>
     <dimen name="chat_top_bar_user_status_size">12sp</dimen>
-    <dimen name="message_text_padding">10dp</dimen>
-    <dimen name="message_date_padding">8dp</dimen>
     <dimen name="message_date_text_size">10sp</dimen>
 </resources>

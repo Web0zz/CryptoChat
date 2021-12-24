@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class ChatRepositoryImp @Inject constructor(
     private val chatDataSource: ChatDataSource
-): ChatRepository {
+) : ChatRepository {
     override fun getChats(): List<Chat> {
         return chatDataSource.chatList
     }
@@ -18,7 +18,7 @@ class ChatRepositoryImp @Inject constructor(
     }
 
     override fun addNewMessage(chatId: Int, message: Message, onFinish: () -> Unit) {
-        chatDataSource.chatList.first { it.id == chatId }.messages.add(0,message)
+        chatDataSource.chatList.first { it.id == chatId }.messages.add(0, message)
         onFinish.invoke()
     }
 }

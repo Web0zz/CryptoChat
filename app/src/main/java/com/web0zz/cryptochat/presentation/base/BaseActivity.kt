@@ -8,7 +8,7 @@ import androidx.databinding.ViewDataBinding
 abstract class BaseActivity<B : ViewDataBinding>(
     private val inflateLayout: (LayoutInflater) -> B
 ) : AppCompatActivity() {
-    protected lateinit var activityDataBinding: B
+    private lateinit var activityDataBinding: B
 
     open fun initTheme() {}
     open fun initUi() {}

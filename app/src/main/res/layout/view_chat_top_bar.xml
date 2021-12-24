@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="userImageUrl"
             type="java.lang.String" />
+
         <variable
             name="userTitle"
             type="java.lang.String" />
@@ -31,10 +33,10 @@
 
         <ImageView
             android:id="@+id/chat_top_bar_user_imageView"
+            LoadCircleImage="@{userImageUrl}"
             android:layout_width="@dimen/top_bar_view_size"
             android:layout_height="@dimen/top_bar_view_size"
             android:layout_marginStart="@dimen/chat_top_bar_user_image_margin_start"
-            LoadCircleImage="@{userImageUrl}"
             android:contentDescription="@string/your_profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/chat_top_bar_back_imageButton"
@@ -47,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/chat_top_bar_user_title_margin_start"
             android:layout_marginTop="@dimen/chat_top_bar_user_title_margin_top"
+            android:maxLines="1"
             android:text="@{userTitle}"
             android:textSize="@dimen/chat_top_bar_user_title_size"
-            android:maxLines="1"
             app:layout_constraintEnd_toStartOf="@+id/chat_top_bar_video_call_imageButton"
             app:layout_constraintStart_toEndOf="@+id/chat_top_bar_user_imageView"
             app:layout_constraintTop_toTopOf="parent"

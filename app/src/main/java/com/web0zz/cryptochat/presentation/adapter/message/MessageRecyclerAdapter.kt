@@ -2,12 +2,13 @@ package com.web0zz.cryptochat.presentation.adapter.message
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.web0zz.cryptochat.presentation.adapter.message.viewholder.message.ReceivedMessageViewHolder
-import com.web0zz.cryptochat.presentation.adapter.message.viewholder.message.SentMessageViewHolder
 import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem
-import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem.Type.*
+import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem.Type.RECEIVED_MESSAGE
+import com.web0zz.cryptochat.presentation.adapter.message.model.MessageItem.Type.SENT_MESSAGE
 import com.web0zz.cryptochat.presentation.adapter.message.model.ReceivedMessage
 import com.web0zz.cryptochat.presentation.adapter.message.model.SentMessage
+import com.web0zz.cryptochat.presentation.adapter.message.viewholder.message.ReceivedMessageViewHolder
+import com.web0zz.cryptochat.presentation.adapter.message.viewholder.message.SentMessageViewHolder
 
 class MessageRecyclerAdapter(
     private val items: MutableList<MessageItem>

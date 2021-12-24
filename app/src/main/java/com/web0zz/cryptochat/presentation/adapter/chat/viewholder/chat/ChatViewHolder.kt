@@ -28,7 +28,12 @@ class ChatViewHolder(
 
         if (unReadCount > 0) {
             binding.chatItemUserLastMessageTextView.text = chat.messages.last().body
-            binding.chatItemUserLastMessageTextView.setTextColor(ContextCompat.getColor(binding.root.context, R.color.light_blue))
+            binding.chatItemUserLastMessageTextView.setTextColor(
+                ContextCompat.getColor(
+                    binding.root.context,
+                    R.color.light_blue
+                )
+            )
             binding.chatItemLastMessageCountTextView.text = unReadCount.toString()
             binding.chatItemLastMessageCountTextView.visibility = View.VISIBLE
         }

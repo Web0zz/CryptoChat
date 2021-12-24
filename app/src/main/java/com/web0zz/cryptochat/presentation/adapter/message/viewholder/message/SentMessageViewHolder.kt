@@ -10,10 +10,17 @@ class SentMessageViewHolder(
     private val binding: ViewMessageItemSentBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(sentMessage: SentMessage) {
+        var isClicked = false
+
         binding.message = sentMessage.message
-
         binding.sentMessageMaterialCardView.setOnClickListener {
-
+            isClicked = if (isClicked) {
+                binding.sentMessageMotionLayout.transitionToStart()
+                false
+            } else {
+                binding.sentMessageMotionLayout.transitionToEnd()
+                true
+            }
         }
     }
 

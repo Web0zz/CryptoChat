@@ -33,9 +33,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(
     private lateinit var messageRecyclerAdapter: MessageRecyclerAdapter
 
     override fun onCreateInvoke() {
-        chat.messages.reversed().forEach {
-            if (!it.isRead) { it.isRead = false }
-
+        chat.messages.forEach {
             if (it.fromUser) messageList.add(SentMessage(it))
             else messageList.add(ReceivedMessage(it))
         }
@@ -53,7 +51,11 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(
 
         with(fragmentBinding.messagesRecyclerView) {
             layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
+                LinearLayoutManager(
+                    context,
+                    LinearLayoutManager.VERTICAL,
+                    false
+                ).apply { stackFromEnd = true }
             adapter = MessageRecyclerAdapter(messageList).also { messageRecyclerAdapter = it }
         }
 
@@ -72,6 +74,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(
                         ).also { sendMessage = it }
                     ) {
                         messageRecyclerAdapter.addNewMessage(SentMessage(sendMessage))
+                        fragmentBinding.messageInputTextInputLayout.editText?.text?.clear()
                     }
                 }
             }

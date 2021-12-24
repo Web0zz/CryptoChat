@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs'
 }
@@ -50,10 +49,6 @@ dependencies {
     implementation AndroidDependencies.constraintLib
     implementation AndroidDependencies.navFragmentLib
     implementation AndroidDependencies.navUiLib
-
-    // Room
-    implementation RoomDependencies.roomRuntimeLib
-    kapt RoomDependencies.roomCompilerLib
 
     // Hilt
     implementation HiltDependencies.hiltAndroidLib

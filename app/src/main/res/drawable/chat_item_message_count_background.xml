@@ -4,5 +4,5 @@
     <size
         android:width="@dimen/chat_item_last_message_count_background_size"
         android:height="@dimen/chat_item_last_message_count_background_size" />
-    <solid android:color="?attr/colorOnPrimary"/>
+    <solid android:color="?attr/colorOnPrimary" />
 </shape>

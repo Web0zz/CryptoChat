@@ -12,9 +12,6 @@ object Versions {
     // Navigation
     const val navVersion = "2.3.5"
 
-    // Room
-    const val roomVersion = "2.3.0"
-
     // Hilt
     const val hiltVersion = "2.38.1"
 

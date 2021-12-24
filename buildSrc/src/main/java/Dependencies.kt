@@ -17,11 +17,6 @@ object AndroidDependencies {
     const val navUiLib = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
 }
 
-object RoomDependencies {
-    const val roomRuntimeLib = "androidx.room:room-runtime:${Versions.roomVersion}"
-    const val roomCompilerLib = "androidx.room:room-compiler:${Versions.roomVersion}"
-}
-
 object HiltDependencies {
     const val hiltAndroidLib = "com.google.dagger:hilt-android:${Versions.hiltVersion}"
     const val hiltCompilerLib = "com.google.dagger:hilt-compiler:${Versions.hiltVersion}"
