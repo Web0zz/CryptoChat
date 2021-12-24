@@ -23,6 +23,7 @@
     <dimen name="login_head_text_size">20sp</dimen>
 
     <!-- Home - Chat Screen -->
+    <dimen name="bottom_bar_buttons_size">50dp</dimen>
     <dimen name="chat_item_list_margin_top">15dp</dimen>
     <dimen name="chat_item_margin_vertical">10dp</dimen>
     <dimen name="chat_item_photo_size">60dp</dimen>

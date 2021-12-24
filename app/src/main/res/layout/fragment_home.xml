@@ -22,12 +22,21 @@
             android:layout_height="@dimen/constraint_zero_dimen"
             android:layout_marginHorizontal="@dimen/recyclerview_margin_horizontal"
             android:layout_marginTop="@dimen/chat_item_list_margin_top"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/home_bottom_bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_top_bar"
-            tools:listitem="@layout/view_home_chat_item"
-            tools:itemCount="4"/>
+            tools:itemCount="4"
+            tools:listitem="@layout/view_home_chat_item" />
 
+        <include
+            android:id="@+id/home_bottom_bar"
+            layout="@layout/view_home_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/top_bar_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

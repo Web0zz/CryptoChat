@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/messages_imageButton"
+            android:layout_width="@dimen/bottom_bar_buttons_size"
+            android:layout_height="@dimen/bottom_bar_buttons_size"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/messages"
+            android:src="@drawable/ic_messages"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/notifications_imageButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorOnPrimary" />
+
+        <ImageButton
+            android:id="@+id/notifications_imageButton"
+            android:layout_width="@dimen/bottom_bar_buttons_size"
+            android:layout_height="@dimen/bottom_bar_buttons_size"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/notifications"
+            android:src="@drawable/ic_notifications"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/add_floatingActionButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/messages_imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/new_message"
+            android:src="@drawable/ic_new"
+            app:borderWidth="@dimen/constraint_zero_dimen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/calls_imageButton"
+            android:layout_width="@dimen/bottom_bar_buttons_size"
+            android:layout_height="@dimen/bottom_bar_buttons_size"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/calls"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/contacts_imageButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/add_floatingActionButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
+
+        <ImageButton
+            android:id="@+id/contacts_imageButton"
+            android:layout_width="@dimen/bottom_bar_buttons_size"
+            android:layout_height="@dimen/bottom_bar_buttons_size"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/contacts"
+            android:src="@drawable/ic_contacts"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/calls_imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

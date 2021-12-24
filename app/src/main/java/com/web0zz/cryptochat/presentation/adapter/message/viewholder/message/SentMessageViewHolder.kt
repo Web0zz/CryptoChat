@@ -11,6 +11,10 @@ class SentMessageViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(sentMessage: SentMessage) {
         binding.message = sentMessage.message
+
+        binding.sentMessageMaterialCardView.setOnClickListener {
+
+        }
     }
 
     companion object {

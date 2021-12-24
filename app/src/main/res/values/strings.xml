@@ -14,14 +14,18 @@
     <!-- Home Screen -->
     <string name="chat_user_profile_photo">chat user profile photo</string>
     <string name="light_and_dark_mode">light and dark mode</string>
-    <string name="messages">Messages</string>
     <string name="your_profile">your profile</string>
+    <string name="make_video_call">make video call</string>
+    <string name="make_phone_call">make phone call</string>
+    <string name="new_message">New message</string>
+    <string name="messages">Messages</string>
+    <string name="notifications">Notifications</string>
+    <string name="calls">Calls</string>
+    <string name="contacts">Contacts</string>
 
     <!-- Chat Screen -->
     <string name="type_something">Type something…</string>
     <string name="send_message">send message</string>
     <string name="camera">camera</string>
     <string name="back">back</string>
-    <string name="make_video_call">make video call</string>
-    <string name="make_phone_call">make phone call</string>
 </resources>
