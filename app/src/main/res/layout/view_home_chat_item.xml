@@ -1,22 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chat"
+            type="com.web0zz.cryptochat.domain.model.Chat" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/chat_item_user_imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            LoadCircleImage="@{chat.imageUrl}"
+            android:layout_width="@dimen/chat_item_photo_size"
+            android:layout_height="@dimen/chat_item_photo_size"
+            android:layout_margin="@dimen/chat_item_default_margin"
+            android:contentDescription="@string/chat_user_profile_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/chat_item_user_name_textView"
+            android:layout_width="@dimen/constraint_zero_dimen"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/chat_item_default_margin"
+            android:text="@{chat.title}"
+            android:textSize="@dimen/chat_item_title_size"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/chat_item_last_message_time_textView"
+            app:layout_constraintStart_toEndOf="@+id/chat_item_user_imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Patrik Nelson" />
+
+        <TextView
+            android:id="@+id/chat_item_last_message_time_textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/chat_item_default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="YESTERDAY" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/chat_item_text_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="chat_item_last_message_time_textView"
+            tools:layout_editor_absoluteX="321dp" />
 
         <TextView
             android:id="@+id/chat_item_user_last_message_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="@dimen/constraint_zero_dimen"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/chat_item_last_message_top_margin"
+            android:layout_marginEnd="@dimen/chat_item_last_message_end_margin"
+            app:layout_constraintEnd_toStartOf="@+id/chat_item_last_message_time_textView"
+            app:layout_constraintStart_toStartOf="@+id/chat_item_user_name_textView"
+            app:layout_constraintTop_toBottomOf="@+id/chat_item_user_name_textView"
+            tools:text="Wanna go outside someday?" />
+
+        <TextView
+            android:id="@+id/chat_item_last_message_count_textView"
+            android:layout_width="@dimen/chat_item_last_message_count_background_size"
+            android:layout_height="@dimen/chat_item_last_message_count_background_size"
+            android:layout_margin="@dimen/chat_item_count_margin"
+            android:background="@drawable/chat_item_message_count_background"
+            android:gravity="center"
+            android:textColor="?attr/colorOnSecondary"
+            android:textSize="@dimen/chat_item_count_text_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/chat_item_last_message_time_textView"
+            app:layout_constraintTop_toBottomOf="@+id/chat_item_last_message_time_textView"
+            tools:text="1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

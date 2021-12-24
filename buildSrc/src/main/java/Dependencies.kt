@@ -26,3 +26,8 @@ object HiltDependencies {
     const val hiltAndroidLib = "com.google.dagger:hilt-android:${Versions.hiltVersion}"
     const val hiltCompilerLib = "com.google.dagger:hilt-compiler:${Versions.hiltVersion}"
 }
+
+object GlideDependencies {
+    const val glideLib = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
+    const val glideCompLib = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
+}

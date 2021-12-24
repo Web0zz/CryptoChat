@@ -10,9 +10,9 @@
 
     <style name="ShapeAppearanceOverlay_card_sent_message_corners" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopRight">@dimen/message_corner_radius</item>
+        <item name="cornerSizeTopRight">@dimen/message_corner_min_radius</item>
         <item name="cornerSizeTopLeft">@dimen/message_corner_radius</item>
-        <item name="cornerSizeBottomRight">@dimen/message_corner_min_radius</item>
+        <item name="cornerSizeBottomRight">@dimen/message_corner_radius</item>
         <item name="cornerSizeBottomLeft">@dimen/message_corner_radius</item>
     </style>
 

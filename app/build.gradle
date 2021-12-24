@@ -58,4 +58,8 @@ dependencies {
     // Hilt
     implementation HiltDependencies.hiltAndroidLib
     kapt HiltDependencies.hiltCompilerLib
+
+    // Glide
+    implementation GlideDependencies.glideLib
+    kapt GlideDependencies.glideCompLib
 }

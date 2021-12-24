@@ -3,6 +3,9 @@
     <!-- Common dimens -->
     <dimen name="constraint_zero_dimen">0dp</dimen>
     <dimen name="default_elevation">10dp</dimen>
+    <dimen name="top_bar_margin">15dp</dimen>
+    <dimen name="top_bar_view_size">50dp</dimen>
+    <dimen name="recyclerview_margin_horizontal">10dp</dimen>
 
     <!-- Login Screen -->
     <dimen name="login_head_margin_top">180dp</dimen>
@@ -19,7 +22,30 @@
     <!-- Text Size-->
     <dimen name="login_head_text_size">20sp</dimen>
 
+    <!-- Home - Chat Screen -->
+    <dimen name="chat_item_photo_size">60dp</dimen>
+    <dimen name="chat_item_default_margin">15dp</dimen>
+    <dimen name="chat_item_count_margin">5dp</dimen>
+    <dimen name="chat_item_last_message_count_background_size">20dp</dimen>
+    <dimen name="chat_item_last_message_end_margin">10dp</dimen>
+    <dimen name="chat_item_last_message_top_margin">5dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="chat_item_count_text_size">11sp</dimen>
+    <dimen name="chat_item_title_size">16sp</dimen>
+    <dimen name="home_top_bar_head_size">22sp</dimen>
+
     <!-- Chat - Message Screen -->
+    <dimen name="chat_top_bar_back_button_width">50dp</dimen>
+    <dimen name="chat_top_bar_user_image_margin_start">5dp</dimen>
+    <dimen name="chat_top_bar_user_title_margin_start">20dp</dimen>
+    <dimen name="chat_top_bar_user_title_margin_top">10dp</dimen>
+    <dimen name="chat_top_bar_user_status_margin_top">5dp</dimen>
+    <dimen name="chat_top_bar_right_buttons_size">40dp</dimen>
+    <dimen name="chat_top_bar_button_margin_end">10dp</dimen>
+    <dimen name="message_list_top_margin">10dp</dimen>
+    <dimen name="message_margin_vertical">2dp</dimen>
+    <dimen name="message_background_height">80dp</dimen>
     <dimen name="message_corner_radius">20dp</dimen>
     <dimen name="message_corner_min_radius">3dp</dimen>
     <dimen name="message_text_input_padding">8dp</dimen>
@@ -30,6 +56,8 @@
     <dimen name="message_camera_button_margin_left">20dp</dimen>
 
     <!-- Text Size-->
+    <dimen name="chat_top_bar_user_title_size">16sp</dimen>
+    <dimen name="chat_top_bar_user_status_size">12sp</dimen>
     <dimen name="message_text_padding">10dp</dimen>
     <dimen name="message_date_padding">8dp</dimen>
     <dimen name="message_date_text_size">10sp</dimen>

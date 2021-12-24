@@ -17,4 +17,7 @@ object Versions {
 
     // Hilt
     const val hiltVersion = "2.38.1"
+
+    // Glide
+    const val glideVersion = "4.12.0"
 }

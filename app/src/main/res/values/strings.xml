@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">CryptoChat</string>
+    <string name="theme_mode">THEME_MODE_IS_LIGHT</string>
 
     <!-- Login Screen -->
     <string name="login">LOGIN</string>
@@ -10,8 +11,17 @@
     <string name="don_t_have_an_account_register_here">Don\'t have an account? Register Here</string>
     <string name="login_state_key">LOGIN</string>
 
+    <!-- Home Screen -->
+    <string name="chat_user_profile_photo">chat user profile photo</string>
+    <string name="light_and_dark_mode">light and dark mode</string>
+    <string name="messages">Messages</string>
+    <string name="your_profile">your profile</string>
+
     <!-- Chat Screen -->
     <string name="type_something">Type something…</string>
     <string name="send_message">send message</string>
     <string name="camera">camera</string>
+    <string name="back">back</string>
+    <string name="make_video_call">make video call</string>
+    <string name="make_phone_call">make phone call</string>
 </resources>

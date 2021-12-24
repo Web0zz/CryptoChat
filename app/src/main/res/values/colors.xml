@@ -8,4 +8,7 @@
     <color name="gray">#A7AAB5</color>
     <color name="light_blue">#2176FF</color>
     <color name="light_red">#E76F51</color>
+
+    <color name="light_button_background">#FAFAFA</color>
+    <color name="active_green">#41BB94</color>
 </resources>

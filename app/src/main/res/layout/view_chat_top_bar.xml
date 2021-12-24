@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userImageUrl"
+            type="java.lang.String" />
+        <variable
+            name="userTitle"
+            type="java.lang.String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/top_bar_margin">
+
+        <ImageButton
+            android:id="@+id/chat_top_bar_back_imageButton"
+            android:layout_width="@dimen/chat_top_bar_back_button_width"
+            android:layout_height="@dimen/top_bar_view_size"
+            android:background="@drawable/back_button_background"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
+
+        <ImageView
+            android:id="@+id/chat_top_bar_user_imageView"
+            android:layout_width="@dimen/top_bar_view_size"
+            android:layout_height="@dimen/top_bar_view_size"
+            android:layout_marginStart="@dimen/chat_top_bar_user_image_margin_start"
+            LoadCircleImage="@{userImageUrl}"
+            android:contentDescription="@string/your_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chat_top_bar_back_imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/chat_top_bar_user_title_textView"
+            android:layout_width="@dimen/constraint_zero_dimen"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/chat_top_bar_user_title_margin_start"
+            android:layout_marginTop="@dimen/chat_top_bar_user_title_margin_top"
+            android:text="@{userTitle}"
+            android:textSize="@dimen/chat_top_bar_user_title_size"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/chat_top_bar_video_call_imageButton"
+            app:layout_constraintStart_toEndOf="@+id/chat_top_bar_user_imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Haris Roundback" />
+
+        <TextView
+            android:id="@+id/chat_top_bar_user_state_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/chat_top_bar_user_status_margin_top"
+            android:textColor="@color/active_green"
+            android:textSize="@dimen/chat_top_bar_user_status_size"
+            app:layout_constraintStart_toStartOf="@+id/chat_top_bar_user_title_textView"
+            app:layout_constraintTop_toBottomOf="@+id/chat_top_bar_user_title_textView"
+            tools:text="Online now" />
+
+        <ImageButton
+            android:id="@+id/chat_top_bar_phone_call_imageButton"
+            android:layout_width="@dimen/chat_top_bar_right_buttons_size"
+            android:layout_height="@dimen/chat_top_bar_right_buttons_size"
+            android:background="@drawable/back_button_background"
+            android:contentDescription="@string/make_phone_call"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
+
+        <ImageButton
+            android:id="@+id/chat_top_bar_video_call_imageButton"
+            android:layout_width="@dimen/chat_top_bar_right_buttons_size"
+            android:layout_height="@dimen/chat_top_bar_right_buttons_size"
+            android:layout_marginEnd="@dimen/chat_top_bar_button_margin_end"
+            android:background="@drawable/back_button_background"
+            android:contentDescription="@string/make_video_call"
+            android:src="@drawable/ic_videocam"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chat_top_bar_phone_call_imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/chat_top_bar_user_title_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="chat_top_bar_video_call_imageButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
