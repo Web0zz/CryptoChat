@@ -18,7 +18,7 @@ class ChatRepositoryImp @Inject constructor(
     }
 
     override fun addNewMessage(chatId: Int, message: Message, onFinish: () -> Unit) {
-        chatDataSource.chatList.first { it.id == chatId }.messages.add(0, message)
+        chatDataSource.chatList.first { it.id == chatId }.messages.add(message)
         onFinish.invoke()
     }
 }
